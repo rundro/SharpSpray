@@ -26,6 +26,7 @@ namespace SharpSpray
             string Passwords = null;
             int Delay = new int();
             int Sleep = new int();
+            int Num = new int();
 
             for (int i = 0; i < args.Length; i++)
             {
@@ -45,6 +46,10 @@ namespace SharpSpray
                 {
                     Sleep = int.Parse(args[i + 1]);
                 }
+                else if (args[i] == "--Num")
+                {
+                    Num = int.Parse(args[i + 1]);
+                }
             }
 
             try
@@ -58,9 +63,19 @@ namespace SharpSpray
                 SearchResultCollection results = dSearch.FindAll();
                 if (results != null)
                 {
-                    for (var i = 0; i < results.Count; i++)
+                    if (Num > 0)
                     {
-                        UserList.Add((string)results[i].Properties["sAMAccountName"][0]);
+                        for (var i = 0; i < Num; i++)
+                        {
+                            UserList.Add((string)results[i].Properties["sAMAccountName"][0]);
+                        }
+                    }
+                    else
+                    {
+                        for (var i = 0; i < results.Count; i++)
+                        {
+                            UserList.Add((string)results[i].Properties["sAMAccountName"][0]);
+                        }
                     }
                 }
                 else
@@ -165,7 +180,7 @@ namespace SharpSpray
                     }
                     else
                     {
-                        //Console.WriteLine("[-] Authentication failed with " + UserName + "::" + Password);
+                        Console.WriteLine("[-] Authentication failed with " + UserName + "::" + Password);
                     }
 
                     if (Delay > 0)
